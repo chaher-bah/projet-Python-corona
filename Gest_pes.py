@@ -1,24 +1,36 @@
 personnes=[]
-def ajout_personne(num_cin, nom, prenom, age, adresse, nationalite, tel, date_infection, decede):
+def ajout_personne():
     personne = {
-        'CIN': num_cin,
-        'Nom': nom,
-        'Prenom': prenom,
-        'Age': age,
-        'Adresse': adresse,
-        'Nationalite': nationalite,
-        'Telephone': tel,
-        'Date d\'infection': date_infection,
-        'Decede': decede
+        'CIN': int(input("Numéro de CIN : ")) ,
+        'Nom': input("Nom : "),
+        'Prenom': input("Prénom : "),
+        'Age': int(input("Âge : ")),
+        'Adresse': input("Adresse : "),
+        'Nationalite': input("Nationalité : "),
+        'Telephone': input("Téléphone : "),
+        'Date_infection': input("Date d'infection (jj/mm/aaaa) : "),
+        'Decede': int(input("donner 0 si personne decede,1sinon"))
     }
-    personnes.append(personne)
+    return personne
 #____________________________________________________________
+def aff_personne(personne):
+    print("Données de la personne :")
+    print("- CIN :", personne['CIN'])
+    print("  Nom :", personne['Nom'])
+    print("  Prénom :", personne['Prenom'])
+    print("  Age :", personne['Age'])
+    print("  Adresse :", personne['Adresse'])
+    print("  Nationalité :", personne['Nationalite'])
+    print("  Téléphone :", personne['Telephone'])
+    print("  Date d'infection :", personne['Date_infection'])
+    print("  Décédé :", personne['Decede'])
+#___________________________________________
 def supp_pers_donne(nom, prenom):
     for personne in personnes:
         if personne['Nom'] == nom and personne['Prenom'] == prenom:
             personnes.remove(personne)
             print(f"La personne {nom} {prenom} a été supprimée avec succès !")
-    print(f"La personne {nom} {prenom} n'a pas été trouvée.")
+        print(f"La personne {nom} {prenom} n'a pas été trouvée.")
 #________________________________________________
 def supp_nation(nationalite):
     global personnes 
@@ -55,17 +67,7 @@ def modif_adresse(nom, prenom, nouvelle_adresse):
 def dict_pers():
     global personnes 
     for personne in personnes:
-        print("Personne :")
-        print ("-CIN :",personne['CIN'])
-        print(" - Nom :", personne['Nom'])
-        print(" - Prénom :", personne['Prenom'])
-        print(" - Âge :", personne['Age'])
-        print(" - Adresse :", personne['Adresse'])
-        print(" - Nationalité :", personne['Nationalite'])
-        print(" - Téléphone :", personne['Telephone'])
-        print(" - Date d'infection :", personne['Date_infection'])
-        print(" - Décédé :", personne['Decede'])
-        print("--------------------")
+        aff_personne(personne)
 #_________________________________________________
 def rech_tel(num_tel):
     global personnes  
@@ -74,7 +76,7 @@ def rech_tel(num_tel):
     for personne in personnes:
         if personne['Telephone'] == num_tel:
             print("Informations de la personne trouvée :")
-            dict_pers([personne]) 
+            aff_personne(personne) 
             print("--------------------")
             personne_trouvee = True
     if not personne_trouvee:
@@ -87,7 +89,7 @@ def rech_nation(nation):
     for personne in personnes:
         if personne['Nationalite'] == nation:
             print("Informations de la personne trouvée :")
-            dict_pers([personne]) 
+            aff_personne(personne) 
             print("--------------------")
             personne_trouvee = True
     if not personne_trouvee:
@@ -100,7 +102,7 @@ def rech_ind(indicatif):
     for personne in personnes:
         if personne['Telephone'].find(indicatif) == 0:
             print("Informations de la personne trouvée :")
-            dict_pers([personne])  
+            aff_personne(personne)  
             print("--------------------")
             personne_trouvee = True
     if not personne_trouvee:
@@ -114,7 +116,7 @@ def rech_dec():
     for personne in personnes:
         if personne['Decede']:
             print("Informations de la personne décédée :")
-            dict_pers([personne])  
+            aff_personne(personne)  
             print("--------------------")
             personne_decedee_trouvee = True
 
@@ -128,9 +130,17 @@ def rech_ndec():
     for personne in personnes:
         if personne['Decede']==0:
             print("Informations de la personne non décédée :")
-            dict_pers([personne])  
+            aff_personne(personne)  
             print("--------------------")
             personne_trouvee = True
 
     if not personne_trouvee:
         print("Aucune personne non décédée trouvée.")
+#______________________________________
+#  TEST
+for i in range(2):
+    print(f"Saisie des informations de la personne {i + 1}:")
+    personne = ajout_personne()  
+    personnes.append(personne)
+supp_pers_donne("2","2")
+dict_pers()
