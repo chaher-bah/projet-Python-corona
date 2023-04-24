@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>620</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>620</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(180, 185, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>110</y>
+      <width>221</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#48ac7a;&quot;&gt;Realiée par;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#48ac7a;&quot;&gt;Ouassleti Meyssa&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#48ac7a;&quot;&gt;Bahri Chaher&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#48ac7a;&quot;&gt;Miled Maram&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>40</y>
+      <width>31</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/newPrefix/Picture2.png);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/newPrefix/Picture1.png);</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>620</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAcceuil">
+    <property name="title">
+     <string>Acceuil</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuGestion_des_personnes">
+    <property name="title">
+     <string>Gestion des personnes</string>
+    </property>
+    <widget class="QMenu" name="menuMise_a_jour_des_Personnes">
+     <property name="title">
+      <string>Mise a jour des Personnes</string>
+     </property>
+     <addaction name="separator"/>
+     <addaction name="actionAjouter_personne"/>
+     <addaction name="separator"/>
+     <addaction name="actionSupprimer_personne"/>
+     <addaction name="separator"/>
+     <addaction name="actionModifier_personne"/>
+    </widget>
+    <widget class="QMenu" name="menuRecherche_affich">
+     <property name="title">
+      <string>Recherche_affich</string>
+     </property>
+     <addaction name="actionDictionn"/>
+     <addaction name="actionRech_par_numero"/>
+     <addaction name="actionRech_par_indicatif"/>
+     <addaction name="actionRech_par_nationalite"/>
+     <addaction name="actionRech_des_personnes_decedes"/>
+     <addaction name="actionRech_des_personnes_non_decedes"/>
+    </widget>
+    <addaction name="menuMise_a_jour_des_Personnes"/>
+    <addaction name="menuRecherche_affich"/>
+   </widget>
+   <widget class="QMenu" name="menuGestion_des_maladies">
+    <property name="title">
+     <string>Gestion des maladies</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCalcul_et_affichage">
+    <property name="title">
+     <string>Calcul et affichage</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuEnreg_et_Recup_Fichiers">
+    <property name="title">
+     <string>Enreg. et Recup. Fichiers</string>
+    </property>
+   </widget>
+   <addaction name="menuAcceuil"/>
+   <addaction name="menuGestion_des_personnes"/>
+   <addaction name="menuGestion_des_maladies"/>
+   <addaction name="menuCalcul_et_affichage"/>
+   <addaction name="menuEnreg_et_Recup_Fichiers"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAjouter_personne">
+   <property name="text">
+    <string>Ajouter personne</string>
+   </property>
+  </action>
+  <action name="actionSupp_personne_donn">
+   <property name="text">
+    <string>Supp. personne donné</string>
+   </property>
+  </action>
+  <action name="actionSupp_des_personnes_d_une_nationalit_donn">
+   <property name="text">
+    <string>Supp. des personnes d'une nationalité donné</string>
+   </property>
+  </action>
+  <action name="actionSupp_des_personnes_d_un_indicatif_donn_Tel">
+   <property name="text">
+    <string>Supp. des personnes d'un indicatif donné (Tel)</string>
+   </property>
+  </action>
+  <action name="actionT_l_phone">
+   <property name="text">
+    <string>Téléphone</string>
+   </property>
+  </action>
+  <action name="actionAdresse">
+   <property name="text">
+    <string>Adresse</string>
+   </property>
+  </action>
+  <action name="actionDictionn">
+   <property name="text">
+    <string>Dictionnaire</string>
+   </property>
+  </action>
+  <action name="actionRech_par_numero">
+   <property name="text">
+    <string>Rech par numero</string>
+   </property>
+  </action>
+  <action name="actionRech_par_indicatif">
+   <property name="text">
+    <string>Rech par indicatif </string>
+   </property>
+  </action>
+  <action name="actionRech_par_nationalite">
+   <property name="text">
+    <string>Rech par nationalite</string>
+   </property>
+  </action>
+  <action name="actionRech_des_personnes_decedes">
+   <property name="text">
+    <string>Rech des personnes decedes</string>
+   </property>
+  </action>
+  <action name="actionRech_des_personnes_non_decedes">
+   <property name="text">
+    <string>Rech des personnes non decedes</string>
+   </property>
+  </action>
+  <action name="actionModifier_personne">
+   <property name="text">
+    <string>Modifier personne</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_personne">
+   <property name="text">
+    <string>Supprimer personne</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <signal>signal1()</signal>
+  <signal>signal2()</signal>
+ </slots>
+</ui>
